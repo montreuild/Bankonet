@@ -1,4 +1,4 @@
-package bankonet_stockage;
+package bankonet.stockage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import bankonet.dto.Client;
+import bankonet.dto.Compte;
+import bankonet.metier.*;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -51,7 +55,7 @@ public class Stockage <T,E>{
 		
 		Map<String,Client> clientsmap= new HashMap<>();
 		clientsmap=lireclientdansfichier();
-		clientsmap.put(client.login, client);
+		clientsmap.put(client.getLogin(), client);
 
 		
 	    ObjectOutputStream oos=null;

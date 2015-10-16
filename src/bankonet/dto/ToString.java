@@ -1,4 +1,4 @@
-package bankonet_stockage;
+package bankonet.dto;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

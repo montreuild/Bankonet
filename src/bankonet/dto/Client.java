@@ -1,4 +1,4 @@
-package bankonet_stockage;
+package bankonet.dto;
 
 import java.util.HashMap;
 import java.util.Iterator;

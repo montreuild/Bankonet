@@ -1,4 +1,5 @@
-package bankonet_conseiller;
+package bankonet.ihm.conseiller;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,12 +10,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import bankonet_stockage.Civilite;
-import bankonet_stockage.Client;
-import bankonet_stockage.Compte;
-import bankonet_stockage.CompteCourant;
-import bankonet_stockage.CompteEpargne;
-import bankonet_stockage.Stockage;
+import bankonet.dto.*;
+import bankonet.stockage.Stockage;
+
 
 public class Bankonet_Conseiller {
 

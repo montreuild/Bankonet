@@ -1,4 +1,4 @@
-package bankonet_stockage;
+package bankonet.dto;
 
 public class CreditException extends Exception{
 

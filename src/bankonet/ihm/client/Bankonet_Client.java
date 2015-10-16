@@ -1,4 +1,4 @@
-package bankonet_client;
+package bankonet.ihm.client;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -8,11 +8,9 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
-import bankonet_stockage.Client;
-import bankonet_stockage.CompteCourant;
-import bankonet_stockage.CreditException;
-import bankonet_stockage.DebitException;
-import bankonet_stockage.Stockage;
+import bankonet.dto.*;
+import bankonet.stockage.Stockage;
+
 
 public class Bankonet_Client {
 
@@ -32,6 +30,8 @@ public class Bankonet_Client {
 				
 				System.out.println("Veuillez saisir votre mot de passe:");
 				mdp = sc.nextLine();
+				
+				
 				
 				//Récupération de la liste des clients
 				Map<String,Client> clientsliste= new HashMap<>();

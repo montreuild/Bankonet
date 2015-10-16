@@ -1,4 +1,4 @@
-package bankonet_stockage;
+package bankonet.dto;
 
 public enum Civilite {
 
