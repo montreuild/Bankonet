@@ -1,7 +1,8 @@
 package bankonet.dao;
 
-import java.util.List;
+import java.util.Map;
 
+import bankonet.dto.Client;
 import bankonet.dto.Compte;
 
 
@@ -9,8 +10,8 @@ import bankonet.dto.Compte;
 public interface CompteDao {
 
 
-	
-	public void saveClient (Compte compte);
-	
+	void saveCompte(String clientlogin, Compte compte);
+	void saveCompte(Client client);
+	public Map<String,Compte> lirecomptedansfichier();
 
 }

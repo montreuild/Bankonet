@@ -11,15 +11,13 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import bankonet.dto.Compte;
-import bankonet.metier.*;
+import bankonet.dto.*;
 
 public class CompteDaoFile implements CompteDao {
 
 	private static final String FICHIER_STOCKAGE_COMPTE = "fichiercompte.txt";
 	
-	@Override
-	public void saveClient(Compte compte) {
+	public void saveCompte(String clientlogin,Compte compte) {
 		Map<String,Compte> comptesmap= new HashMap<>();
 		comptesmap=lirecomptedansfichier();
 		comptesmap.put(compte.getIntitule(), compte);
@@ -55,7 +53,7 @@ public class CompteDaoFile implements CompteDao {
 		
 	}
 	
-	public static Map<String,Compte>  lirecomptedansfichier(){
+	public Map<String,Compte> lirecomptedansfichier(){
 		
 		Map<String,Compte> comptesmap= new HashMap<>();
 		 
@@ -64,12 +62,13 @@ public class CompteDaoFile implements CompteDao {
 			fis = new FileInputStream (FICHIER_STOCKAGE_COMPTE);
 		} catch (FileNotFoundException e1) {
 		}
+		
+		
 		ObjectInputStream ois=null;
 		try {
 			ois = new ObjectInputStream (fis);
 			Object objetStocke = ois.readObject ();
-			
-			comptesmap=((Map<String,Compte>) objetStocke);
+			comptesmap=(Map<String,Compte>) objetStocke;
 			
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
@@ -86,5 +85,18 @@ public class CompteDaoFile implements CompteDao {
 		}
         return comptesmap;
 }
+
+	@Override
+	public void saveCompte(Client client) {
+		
+		Map<String,Compte> compteliste= new HashMap<>();
+		compteliste=client.getComptesMap();
+		
+		for (String mapKey : compteliste.keySet()) {
+			
+			saveCompte(mapKey, compteliste.get(mapKey));
+		}
+		
+	}
 
 }

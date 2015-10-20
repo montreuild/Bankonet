@@ -11,8 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import bankonet.dto.Client;
-import bankonet.metier.*;
+import bankonet.dto.*;
 
 public class ClientDaoFile implements ClientDao {
 
@@ -68,7 +67,7 @@ public class ClientDaoFile implements ClientDao {
 		try {
 			ois = new ObjectInputStream (fis);
 			Object objetStocke = ois.readObject ();
-			clientsmap=((Map<String,Client>) objetStocke);
+			clientsmap=(Map<String,Client>) objetStocke;
 			
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();

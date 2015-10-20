@@ -9,9 +9,6 @@ public interface ClientDao {
 	
 	public void saveClient (Client client);
 
-	public static Map<String,Client> lireclientdansfichier() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public Map<String,Client> lireclientdansfichier();
 
 }	

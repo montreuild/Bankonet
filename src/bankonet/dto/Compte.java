@@ -76,7 +76,8 @@ public abstract class  Compte implements CompteStat, Serializable{
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
-	
+
+
 
 	
 }

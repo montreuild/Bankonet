@@ -8,12 +8,22 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
+import bankonet.dao.FactoryDao;
 import bankonet.dto.*;
+import bankonet.ihm.conseiller.ClientService;
+import bankonet.ihm.conseiller.ClientServiceImp;
+import bankonet.ihm.conseiller.CompteService;
+import bankonet.ihm.conseiller.CompteServiceImp;
+import bankonet.ihm.conseiller.DaoFactory;
 import bankonet.stockage.Stockage;
 
 
 public class Bankonet_Client {
 
+	
+	private FactoryDao factory;
+	private CompteService compteService= new CompteServiceImp();
+	private ClientService clientservice=new ClientServiceImp(compteService,factory.getClientDao());
 	
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
@@ -32,21 +42,6 @@ public class Bankonet_Client {
 				mdp = sc.nextLine();
 				
 				
-				
-				//Récupération de la liste des clients
-				Map<String,Client> clientsliste= new HashMap<>();
-				clientsliste=Stockage.lireclientdansfichier();
-				sessionclient=clientsliste.get(login);
-				
-				if(sessionclient!= null)
-						if(sessionclient.getMdp().equals(mdp)){
-						connexion="ok";
-					}else{
-						System.out.println("Erreur, try again!! \n");
-					}
-				else{	
-					System.out.println("login erroné");
-					}
 				
 			}
 			while(connexion!="ok");

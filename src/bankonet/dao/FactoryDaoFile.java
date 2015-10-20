@@ -3,12 +3,12 @@ package bankonet.dao;
 public class FactoryDaoFile implements FactoryDao {
 
 	@Override
-	public CompteDao GetCompteDao() {
+	public CompteDao getCompteDao() {
 		return new CompteDaoFile();
 	}
 
 	@Override
-	public ClientDao GetClientDao() {
+	public ClientDao getClientDao() {
 		return new ClientDaoFile();
 	}
 
