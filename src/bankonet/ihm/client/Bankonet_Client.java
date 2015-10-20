@@ -4,26 +4,22 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
 import bankonet.dao.FactoryDao;
-import bankonet.dto.*;
-import bankonet.ihm.conseiller.ClientService;
-import bankonet.ihm.conseiller.ClientServiceImp;
-import bankonet.ihm.conseiller.CompteService;
-import bankonet.ihm.conseiller.CompteServiceImp;
-import bankonet.ihm.conseiller.DaoFactory;
-import bankonet.stockage.Stockage;
+import bankonet.dto.Client;
+import bankonet.dto.CompteCourant;
+import bankonet.dto.CreditException;
+import bankonet.dto.DebitException;
 
 
 public class Bankonet_Client {
 
 	
 	private FactoryDao factory;
-	private CompteService compteService= new CompteServiceImp();
-	private ClientService clientservice=new ClientServiceImp(compteService,factory.getClientDao());
+	//private CompteService compteService= new CompteServiceImp();
+	//private ClientService clientservice=new ClientServiceImp(compteService,factory.getClientDao());
 	
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
@@ -114,16 +110,16 @@ public class Bankonet_Client {
 			    		   
 			    		   
 			    		
-			    		//Enregistrement dans le fichier client et compte
-			    		Stockage<String, Client> stock=new Stockage<String, Client>();
-						stock.enregistrerclientdansfichier(sessionclient);
-						stock.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteacrediter));
-		
-						
-						//Récupération du client et du compte après, on rafraichie le client
-						Map<String,Client> clientsliste= new HashMap<>();
-						clientsliste=Stockage.lireclientdansfichier();
-						sessionclient=clientsliste.get(login);
+//			    		//Enregistrement dans le fichier client et compte
+//			    		Stockage<String, Client> stock=new Stockage<String, Client>();
+//						stock.enregistrerclientdansfichier(sessionclient);
+//						stock.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteacrediter));
+//		
+//						
+//						//Récupération du client et du compte après, on rafraichie le client
+//						Map<String,Client> clientsliste= new HashMap<>();
+//						clientsliste=Stockage.lireclientdansfichier();
+//						sessionclient=clientsliste.get(login);
 			    		
 						break;
 						
@@ -180,16 +176,16 @@ public class Bankonet_Client {
 						
 			    		   System.out.print("Votre nouveau solde est de "+ sessionclient.getComptesMap().get(compteadebiter).getSolde() +"\n\n");
 			    		
-				    		//Enregistrement dans le fichier client et compte
-				    		Stockage<String, Client> stock1=new Stockage<String, Client>();
-							stock1.enregistrerclientdansfichier(sessionclient);
-							stock1.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteadebiter));
-			
-							
-							//Récupération du client et du compte après, on rafraichie le client
-							Map<String,Client> clientsliste1= new HashMap<>();
-							clientsliste1=Stockage.lireclientdansfichier();
-							sessionclient=clientsliste1.get(login);
+//				    		//Enregistrement dans le fichier client et compte
+//				    		Stockage<String, Client> stock1=new Stockage<String, Client>();
+//							stock1.enregistrerclientdansfichier(sessionclient);
+//							stock1.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteadebiter));
+//			
+//							
+//							//Récupération du client et du compte après, on rafraichie le client
+//							Map<String,Client> clientsliste1= new HashMap<>();
+//							clientsliste1=Stockage.lireclientdansfichier();
+//							sessionclient=clientsliste1.get(login);
 			    		}
 						break;
 						

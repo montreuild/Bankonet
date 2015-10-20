@@ -1,21 +1,39 @@
 package bankonet.dto;
 
 import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.Map;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import java.io.Serializable;
 import java.lang.reflect.Field;
 
+@Entity
+@Table (name="client")
 public class Client implements Serializable{
 	
+	@Id
+	String login;
+
+	@Column(name = "NOM", length = 30, nullable = false, unique = false)
 	@ToString (uppercase=true)
 	String nom;
+	@Column(name = "PRENOM", length = 30, nullable = false, unique = false)
 	@ToString
 	String prenom;
+	@Column(name = "IDENTIFIANT", length = 30, nullable = false, unique = false)
 	String identifiant;
+	@Column(name = "CIVILITE", length = 30, nullable = false, unique = false)
 	Civilite civilite;
+	@Transient
 	Map<String,Compte> comptesMap;
-	String login;
+	@Column(name = "MOTDEPASSE", length = 30, nullable = false, unique = false)
 	String mdp;
 	
 	
@@ -84,10 +102,6 @@ public class Client implements Serializable{
 		}
 
 	}
-
-
-	
-	
 
 	//Getter Setter
 

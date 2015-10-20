@@ -5,7 +5,7 @@ import bankonet.metier.ServiceCompte;
 
 public class ExitCommand extends IhmCommand{
 
-	public int getId() {
+	public Integer getId() {
 		return 0;
 	}
 

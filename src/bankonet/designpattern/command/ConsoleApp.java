@@ -26,7 +26,8 @@ public class ConsoleApp {
 			//new ListerTousLesCLientsCommand(),
 			new OuvrirCompteCourantCommand(),
 			new OuvrirCompteEpargneCommand(),
-			new ListerTousLesCLientsCommand()
+			new ListerTousLesCLientsCommand(),
+			new InitialiserBDDCommand()
 			);
 
 	
@@ -36,6 +37,7 @@ public class ConsoleApp {
 		FactoryDao factory =new FactoryDaoSql();
 		ServiceCompte servicecompte= new ServiceComtpeImp(factory.getCompteDao());
 		ServiceClient serviceclient= new ServiceClientImp(servicecompte,factory.getClientDao(), factory.getCompteDao());
+		
 		
 		
 		
