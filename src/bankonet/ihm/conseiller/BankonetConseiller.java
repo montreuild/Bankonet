@@ -84,7 +84,8 @@ public class BankonetConseiller {
 				
 			case "2":
 				//"2. Lister tous les clients
-
+				
+				//Lister les clients
 				System.out.println(serviceclient.listerlesclients());
 				
 				//Lister les comptes
