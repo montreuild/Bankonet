@@ -8,6 +8,10 @@ import java.util.Map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -16,24 +20,31 @@ import java.lang.reflect.Field;
 
 @Entity
 @Table (name="client")
+
+@NamedQueries({
+	@NamedQuery(name="client.findByLastname", query="select clt from Client clt where clt.nom=:searchnom"),
+	@NamedQuery(name="client.findByFirstname", query="select clt from Client clt where clt.prenom=:searchprenom"),
+})
+
 public class Client implements Serializable{
 	
 	@Id
+	@OneToMany(mappedBy="clientlogin")
 	String login;
 
-	@Column(name = "NOM", length = 30, nullable = false, unique = false)
+	@Column(name = "NOM", length = 30)
 	@ToString (uppercase=true)
 	String nom;
-	@Column(name = "PRENOM", length = 30, nullable = false, unique = false)
+	@Column(name = "PRENOM", length = 30 )
 	@ToString
 	String prenom;
-	@Column(name = "IDENTIFIANT", length = 30, nullable = false, unique = false)
+	@Column(name = "IDENTIFIANT", length = 30, unique = true)
 	String identifiant;
-	@Column(name = "CIVILITE", length = 30, nullable = false, unique = false)
+	@Column(name = "CIVILITE", length = 30)
 	Civilite civilite;
 	@Transient
 	Map<String,Compte> comptesMap;
-	@Column(name = "MOTDEPASSE", length = 30, nullable = false, unique = false)
+	@Column(name = "MOTDEPASSE", length = 30)
 	String mdp;
 	
 	

@@ -10,5 +10,10 @@ public interface ServiceClient {
 	public Client creerclient(String nom, String prenom, String login);
 	public Map<String,Client> listerlesclients();
 	public Client retrounerclientlogin(String login);
+	public Client retrouverclientparNomJPA(String mom);
+	public Client retrouverclientparPrenomJPA(String premom);
+	void modifierunclientJPA(String nom, String login);
+	void supprimerunclientJPA(String login);
+	void supprimertouslesclientJPA();
 
 }

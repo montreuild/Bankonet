@@ -33,10 +33,7 @@ public class OuvrirUnCompteCommand extends IhmCommand{
 			System.out.println("Veuillez saisir un login:");
 			login=sc1.nextLine();
 			
-
-		
-		Client client=new Client();
-		client=serviceclient.creerclient(nom, prenom, login);
+		Client client=serviceclient.creerclient(nom, prenom, login);
 	}
 
 }

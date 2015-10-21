@@ -84,5 +84,40 @@ public class ClientDaoFile implements ClientDao {
 		}
         return clientsmap;
 	}
+
+
+	@Override
+	public Client findByLastnameJPA(String search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Client findByFirstnameJPA(String search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void modifiernomclientJPA(String nom, String login) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void supprimerunclientJPA(String login) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void supprimertouslesclientsJPA() {
+		// TODO Auto-generated method stub
+		
+	}
 		
 }

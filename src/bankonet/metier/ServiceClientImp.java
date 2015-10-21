@@ -92,4 +92,35 @@ public class ServiceClientImp implements ServiceClient{
 			
 		}
 
+
+		@Override
+		public Client retrouverclientparNomJPA(String nom) {
+			return clientdao.findByLastnameJPA(nom);
+			
+		}
+
+
+		@Override
+		public Client retrouverclientparPrenomJPA(String prenom) {
+			return clientdao.findByFirstnameJPA(prenom);
+		}
+		
+		@Override
+		public void modifierunclientJPA(String nom,String login) {
+			clientdao.modifiernomclientJPA(nom, login);
+			
+		}
+
+
+		@Override
+		public void supprimerunclientJPA(String login) {
+			clientdao.supprimerunclientJPA(login);
+		}
+
+		
+		@Override
+		public void supprimertouslesclientJPA() {
+			clientdao.supprimertouslesclientsJPA();
+		}
+		
 }

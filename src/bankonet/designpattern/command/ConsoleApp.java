@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import bankonet.dao.FactoryDao;
+import bankonet.dao.FactoryDaoJpa;
 import bankonet.dao.FactoryDaoSql;
 import bankonet.metier.ServiceClient;
 import bankonet.metier.ServiceClientImp;
@@ -27,14 +28,19 @@ public class ConsoleApp {
 			new OuvrirCompteCourantCommand(),
 			new OuvrirCompteEpargneCommand(),
 			new ListerTousLesCLientsCommand(),
-			new InitialiserBDDCommand()
+			new InitialiserBDDCommand(),
+			new RechercheparNomCommand(),
+			new RechercheparPrenomCommand(),
+			new ModifierunclientCommmand(),
+			new Supprimerunclient(),
+			new Supprimertouslesclient()
 			);
 
 	
 	public static void main(String[] args){
 		
 		int choix=99;
-		FactoryDao factory =new FactoryDaoSql();
+		FactoryDao factory =new FactoryDaoJpa();
 		ServiceCompte servicecompte= new ServiceComtpeImp(factory.getCompteDao());
 		ServiceClient serviceclient= new ServiceClientImp(servicecompte,factory.getClientDao(), factory.getCompteDao());
 		

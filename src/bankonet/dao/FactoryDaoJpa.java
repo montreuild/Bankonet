@@ -7,8 +7,8 @@ public class FactoryDaoJpa implements FactoryDao{
 
 	@Override
 	public CompteDao getCompteDao() {
-		return null;
-		//return new CompteDaoJpa();
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("Bankonet");
+		return new CompteDaoJpa(emf);
 	}
 
 	@Override

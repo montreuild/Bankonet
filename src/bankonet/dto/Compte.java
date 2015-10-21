@@ -2,10 +2,25 @@ package bankonet.dto;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="compte")
 public abstract class  Compte implements CompteStat, Serializable{
 	
+	@ManyToOne
+	private Client clientlogin;
+	
+	@Id
 	private String numero;
+	@Column(name="INTITULE", length=30)
 	private String intitule;
+	@Column(name="SOLDE")
 	private double solde;
 	
 	

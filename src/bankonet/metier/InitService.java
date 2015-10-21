@@ -1,27 +1,18 @@
 package bankonet.metier;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import bankonet.dao.ClientDao;
-import bankonet.dao.CompteDao;
 import bankonet.dao.FactoryDao;
 import bankonet.dao.FactoryDaoJpa;
-import bankonet.dao.FactoryDaoSql;
 import bankonet.dto.Civilite;
 import bankonet.dto.Client;
 
 public class InitService {
 	
 	private ClientDao clientdao;
-	private CompteDao comptedao;
-
+	
 	public InitService() {
 		FactoryDao factory =new FactoryDaoJpa();
 		this.clientdao = factory.getClientDao();
-		this.comptedao=factory.getCompteDao();
 	}
 	
 	public void init(){
