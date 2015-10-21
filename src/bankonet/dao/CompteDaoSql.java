@@ -163,4 +163,22 @@ public class CompteDaoSql implements CompteDao{
 		return comptesmap;
 	}
 
+	@Override
+	public void saveCompteJPA(Client client, Compte compte) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveCompteJPA(Client client) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Map<String, Compte> lirecomptedansfichierJPA() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

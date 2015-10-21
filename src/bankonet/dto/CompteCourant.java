@@ -1,9 +1,20 @@
 package bankonet.dto;
 
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+
+
+@Entity
+@DiscriminatorValue("CompteCourant")
 public class CompteCourant extends Compte {
 
-	double montantDecouvertAutorise;
+	@Column(name="MONTANTDECOUVERT")
+	private double montantDecouvertAutorise;
 
+	
+	public CompteCourant() {
+	}
 
 	public CompteCourant(String numero, String intitule, double solde, double montantDecouvertAutorise) {
 		super(numero,intitule,solde);

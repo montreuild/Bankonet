@@ -29,21 +29,26 @@ import java.lang.reflect.Field;
 public class Client implements Serializable{
 	
 	@Id
-	@OneToMany(mappedBy="clientlogin")
+	
 	String login;
 
 	@Column(name = "NOM", length = 30)
 	@ToString (uppercase=true)
 	String nom;
+	
 	@Column(name = "PRENOM", length = 30 )
 	@ToString
 	String prenom;
+	
 	@Column(name = "IDENTIFIANT", length = 30, unique = true)
 	String identifiant;
+	
 	@Column(name = "CIVILITE", length = 30)
 	Civilite civilite;
-	@Transient
+	
+	@OneToMany(mappedBy="clientlogin")
 	Map<String,Compte> comptesMap;
+	
 	@Column(name = "MOTDEPASSE", length = 30)
 	String mdp;
 	
@@ -111,9 +116,12 @@ public class Client implements Serializable{
 		}catch (CompteNonTrouveException e){
 			System.out.println(e.getMessage());
 		}
-
+		
 	}
 
+	
+
+	
 	//Getter Setter
 
 	public String getNom() {

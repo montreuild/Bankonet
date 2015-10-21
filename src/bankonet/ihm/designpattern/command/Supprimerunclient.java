@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Supprimerunclient extends IhmCommand {
 
 	public String getLibelleMenu() {
 		// TODO Auto-generated method stub
-		return "Supprimer un client";
+		return "JPA Supprimer un client";
 	}
 	
 	public void excecute(ServiceCompte servicecompte,ServiceClient serviceclient){

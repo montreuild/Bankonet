@@ -122,5 +122,51 @@ public class ServiceClientImp implements ServiceClient{
 		public void supprimertouslesclientJPA() {
 			clientdao.supprimertouslesclientsJPA();
 		}
+
+
+		@Override
+		public Client creerclientJPA(String nom, String prenom, String login) {
+			
+			Client client = new Client();
+			
+			client.setNom(nom);
+			client.setPrenom(prenom);
+			client.setLogin(login);
+			client.setIdentifiant(login);
+			client.setCivilite(Civilite.MONSIEUR);
+			client.setMdp("0000");
+			
+			
+			clientdao.saveClient(client);
+			client=servicecompte.CreerCompteCourantJPA(client);
+			
+			return client;
+		}
+
+
+		@Override
+		public Map<String, Client> listerlesclientsJPA() {
+			Map<String,Client> clientsmap= new HashMap<>();
+			clientsmap=clientdao.lireclientdansfichier();
+			return clientsmap;
+		}
+
+
+		@Override
+		public Client retrounerclientloginJPA(String login) {
+			
+			Client client=new Client();
+			
+			Map<String,Client> clientsmap= new HashMap<>();
+			clientsmap= new HashMap<>();
+			clientsmap=clientdao.lireclientdansfichier();
+			
+			for (String mapKey : clientsmap.keySet()) {
+				if(clientsmap.get(mapKey).getLogin().equals(login))
+					return clientsmap.get(mapKey);
+			}
+			return null;
+		}
+
 		
 }

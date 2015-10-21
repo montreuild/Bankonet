@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import java.util.Scanner;
 
@@ -6,15 +6,15 @@ import bankonet.dto.Client;
 import bankonet.metier.ServiceClient;
 import bankonet.metier.ServiceCompte;
 
-public class OuvrirUnCompteCommand extends IhmCommand{
+public class OuvrirUnCompteJPACommand extends IhmCommand{
 	
 	public Integer getId() {
-		return 1;
+		return 12;
 	}
 
 	public String getLibelleMenu() {
 		// TODO Auto-generated method stub
-		return "Ouvrir un compte client";
+		return "JPA Ouvrir un compte client";
 	}
 	
 	public void excecute(ServiceCompte servicecompte, ServiceClient serviceclient){
@@ -22,18 +22,18 @@ public class OuvrirUnCompteCommand extends IhmCommand{
 		String prenom;
 		String login;
 		
-		Scanner sc1 = new Scanner(System.in);
+		Scanner sc12 = new Scanner(System.in);
 		
 			System.out.println("Veuillez saisir un nom:");
-			nom=sc1.nextLine();
+			nom=sc12.nextLine();
 			
 			System.out.println("Veuillez saisir un prenom:");
-			prenom=sc1.nextLine();
+			prenom=sc12.nextLine();
 			
 			System.out.println("Veuillez saisir un login:");
-			login=sc1.nextLine();
+			login=sc12.nextLine();
 			
-		Client client=serviceclient.creerclient(nom, prenom, login);
+		Client client=serviceclient.creerclientJPA(nom, prenom, login);
 	}
 
 }

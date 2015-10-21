@@ -23,4 +23,5 @@ public interface ClientDao {
 	public void supprimerunclientJPA(String login);
 	
 	public void supprimertouslesclientsJPA();
+
 }	

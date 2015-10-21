@@ -13,4 +13,12 @@ public interface ServiceCompte {
 	int NombreCompteEpargne(Client client);
 	Map<String, Compte> listerlescomptes();
 	Map<String, Compte> listercomptesclient(Client client);
+	
+	//JPA
+	Client CreerCompteCourantJPA(Client client);
+	Client CreerCompteEpargneJPA(Client client);
+	int NombreCompteCourantJPA();
+	int NombreCompteEpargneJPA();
+	Map<String, Compte> listerlescomptesJPA();
+	Map<String, Compte> listercomptesclientJPA(Client client);
 }

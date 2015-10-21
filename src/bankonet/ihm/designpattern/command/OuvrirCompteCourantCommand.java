@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import java.util.Scanner;
 

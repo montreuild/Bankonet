@@ -21,7 +21,7 @@ public class BankonetConseiller {
 	
 	// FactoryDao factory =new FactoryDaoFile();
 	 FactoryDao factory =new FactoryDaoSql();
-	 ServiceCompte servicecompte= new ServiceComtpeImp(factory.getCompteDao());
+	 ServiceCompte servicecompte= new ServiceComtpeImp(factory.getClientDao(), factory.getCompteDao());
 	 ServiceClient serviceclient= new ServiceClientImp(servicecompte,factory.getClientDao(), factory.getCompteDao());
 	
 	

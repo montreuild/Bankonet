@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class RechercheparNomCommand extends IhmCommand{
 
 	public String getLibelleMenu() {
 		// TODO Auto-generated method stub
-		return "Recherche un client par son nom";
+		return "JPA Recherche un client par son nom";
 	}
 	
 	public void excecute(ServiceCompte servicecompte,ServiceClient serviceclient){

@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import bankonet.metier.ServiceClient;
 import bankonet.metier.ServiceCompte;

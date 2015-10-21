@@ -1,5 +1,12 @@
 package bankonet.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -8,7 +15,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
+import bankonet.dto.Civilite;
 import bankonet.dto.Client;
+import bankonet.dto.Compte;
 
 public class ClientDaoJpa implements ClientDao{
 
@@ -33,11 +42,7 @@ public class ClientDaoJpa implements ClientDao{
 		
 	}
 
-	@Override
-	public Map<String, Client> lireclientdansfichier() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	
 	public Client findByLastnameJPA(String search) {
@@ -116,6 +121,27 @@ public class ClientDaoJpa implements ClientDao{
 		em.close();
 		System.out.println(nbrclientsup+" client sont morts! Il n'en reste aucun!");
 		
+	}
+
+
+	public Map<String, Client> lireclientdansfichier() {
+		Map<String,Client> clientsmap= new HashMap<>();
+		Client client=null;
+
+		
+		EntityManager em=emf.createEntityManager();
+		Query query = em.createQuery("select clt from Client clt");
+		
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		List<Client> listeclient=query.getResultList();
+		for (Client client2 : listeclient) {
+			clientsmap.put(client2.getLogin(),client2);
+		}
+		et.commit();
+		em.close();
+		
+		return clientsmap;
 	}
 		
 }

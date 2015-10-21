@@ -1,6 +1,7 @@
 package bankonet.metier;
 
 import bankonet.dao.ClientDao;
+import bankonet.dao.CompteDao;
 import bankonet.dao.FactoryDao;
 import bankonet.dao.FactoryDaoJpa;
 import bankonet.dto.Civilite;
@@ -9,10 +10,12 @@ import bankonet.dto.Client;
 public class InitService {
 	
 	private ClientDao clientdao;
+	private CompteDao coomptedao;
 	
 	public InitService() {
 		FactoryDao factory =new FactoryDaoJpa();
 		this.clientdao = factory.getClientDao();
+		this.coomptedao= factory.getCompteDao();
 	}
 	
 	public void init(){
@@ -30,5 +33,8 @@ public class InitService {
 
 		
 	}
+	
+	
+	
 
 }

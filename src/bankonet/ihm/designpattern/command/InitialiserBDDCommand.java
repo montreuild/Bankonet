@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import bankonet.metier.InitService;
 import bankonet.metier.ServiceClient;
@@ -11,7 +11,7 @@ public class InitialiserBDDCommand extends IhmCommand{
 
 	public String getLibelleMenu() {
 		// TODO Auto-generated method stub
-		return "Initialiser la BDD";
+		return "JPA Initialiser la BDD";
 	}
 	
 	public void excecute(ServiceCompte servicecompte,ServiceClient serviceclient){

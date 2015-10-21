@@ -1,4 +1,4 @@
-package bankonet.designpattern.command;
+package bankonet.ihm.designpattern.command;
 
 import java.util.List;
 import java.util.Scanner;
@@ -33,7 +33,10 @@ public class ConsoleApp {
 			new RechercheparPrenomCommand(),
 			new ModifierunclientCommmand(),
 			new Supprimerunclient(),
-			new Supprimertouslesclient()
+			new Supprimertouslesclient(),
+			new OuvrirCompteCourantJPACommand(),
+			new OuvrirCompteEpargneJPACommand(),
+			new OuvrirUnCompteJPACommand()
 			);
 
 	
@@ -41,7 +44,7 @@ public class ConsoleApp {
 		
 		int choix=99;
 		FactoryDao factory =new FactoryDaoJpa();
-		ServiceCompte servicecompte= new ServiceComtpeImp(factory.getCompteDao());
+		ServiceCompte servicecompte= new ServiceComtpeImp( factory.getClientDao(), factory.getCompteDao());
 		ServiceClient serviceclient= new ServiceClientImp(servicecompte,factory.getClientDao(), factory.getCompteDao());
 		
 		
