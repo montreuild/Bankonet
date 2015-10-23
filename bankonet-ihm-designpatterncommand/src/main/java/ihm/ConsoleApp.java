@@ -68,6 +68,10 @@ public class ConsoleApp {
 			choix=app.afficherMenu();
 			app.executecommande(choix,servicecompte,serviceclient);
 		}
+		
+		if(choix==0){
+			System.exit(0);
+		}
 	}
 	
 
