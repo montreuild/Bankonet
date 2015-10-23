@@ -2,22 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+
+	<parent>
 	<groupId>Bankonet</groupId>
-	<artifactId>bankonet-data</artifactId>
+	<artifactId>bankonet-parent</artifactId>
 	<version>0.0.1</version>
+	<relativePath>../pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>bankonet-data</artifactId>
+
 	<packaging>jar</packaging>
-
-	<name>bankonet-data</name>
-	<url>http://maven.apache.org</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<urlbdd>jdbc:mysql://localhost:3306/database</urlbdd>
-		<userbdd> root</userbdd>
-		<driverbdd>com.mysql.jdbc.Driver</driverbdd>
-
-	</properties>
 
 	<build>
 		<plugins>
@@ -25,24 +20,6 @@
 
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sql-maven-plugin</artifactId>
-				<version>1.5</version>
-
-				<dependencies>
-					<dependency>
-						<groupId>mysql</groupId>
-						<artifactId>mysql-connector-java</artifactId>
-						<version>5.1.37</version>
-						<scope>runtime</scope>
-					</dependency>
-				</dependencies>
-
-				<configuration>
-					<driver>${driverbdd}</driver>
-					<url>${urlbdd}</url>
-					<username>${userbdd}</username>
-					<password></password>
-				</configuration>
-
 				<executions>
 					<execution>
 						<id>clean-db</id>
@@ -69,8 +46,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
 		</dependency>
 
 

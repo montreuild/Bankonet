@@ -3,9 +3,9 @@
 	<persistence-unit name="Bankonet" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bankonetjpa"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value='${urlbdd}'/>
+			<property name="javax.persistence.jdbc.user" value='${userbdd}'/>
+			<property name="javax.persistence.jdbc.driver" value='${driverbdd}'/>
 		</properties>
 	</persistence-unit>
 </persistence>
