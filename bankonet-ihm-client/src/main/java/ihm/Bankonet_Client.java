@@ -45,9 +45,9 @@ public class Bankonet_Client {
 				{
 					
 					System.out.println("***** APPLICATION CLIENT ******");
-					System.out.println("0. Arrêter le programme");
+					System.out.println("0. ArrÃ©ter le programme");
 					System.out.println("1. Consulter les soldes des comptes");
-					System.out.println("2. Effectuer un dépôt");
+					System.out.println("2. Effectuer un dÃ©pot");
 					System.out.println("3. Effectuer un retrait");
 					System.out.println("4. Effectuer un virement entre vos comptes");
 					System.out.println("5. Effectuer un virement externe");
@@ -60,8 +60,8 @@ public class Bankonet_Client {
 					switch(choix){
 					
 					case "0":
-						//0. Arrêter le programme
-						System.out.println("Arrêt de l’application");
+						//0. ArrÃ©ter le programme
+						System.out.println("ArrÃ©t de l'application");
 						break;
 						
 					case "1":
@@ -78,7 +78,7 @@ public class Bankonet_Client {
 						break;
 						
 					case "2":
-						//"2. Effectuer un dépôt"
+						//"2. Effectuer un dÃ©pot"
 						
 						//affichage des comptes courants:
 						Set<String> listKeys1=sessionclient.getComptesMap().keySet();
@@ -100,7 +100,7 @@ public class Bankonet_Client {
 							sessionclient.getComptesMap().get(compteacrediter).crediter(montantacrediter);
 						} catch (CreditException e) {
 							// TODO Auto-generated catch block
-							System.out.println("Le compte selectionné ou le montant est non valide");
+							System.out.println("Le compte selectionnÃ© ou le montant est non valide");
 							e.printStackTrace();
 						}
 			    		
@@ -114,7 +114,7 @@ public class Bankonet_Client {
 //						stock.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteacrediter));
 //		
 //						
-//						//Récupération du client et du compte après, on rafraichie le client
+//						//RÃ©cupÃ©ration du client et du compte aprÃ¨s, on rafraichie le client
 //						Map<String,Client> clientsliste= new HashMap<>();
 //						clientsliste=Stockage.lireclientdansfichier();
 //						sessionclient=clientsliste.get(login);
@@ -145,16 +145,16 @@ public class Bankonet_Client {
 				    		System.out.println ("Taper le numero(string type CC1) du compte a debiter");
 				    		compteadebiter = sc.nextLine();
 				    	
-				    		//Récupération du débit max
+				    		//RÃ©cupÃ©ration du dÃ©bit max
 				    		debitmax=sessionclient.getComptesMap().get(compteadebiter).debitmax();
 				    		
-				    		//Boucle sur le montant si supérieur a debitmax
+				    		//Boucle sur le montant si supÃ©rieur a debitmax
 					    	do{
 					    		System.out.println ("Taper le montant a debiter");
 					    		montantadebiter = sc.nextInt();
 					    		sc.nextLine();
 					    		if(montantadebiter>debitmax){
-					    			System.out.println("Le montant du retrait dépasse le plafont de "+debitmax+" autorisé\n Tapez 0 pour abandonner ou reessayez\n");
+					    			System.out.println("Le montant du retrait dÃ©passe le plafont de "+debitmax+" autorisÃ©\n Tapez 0 pour abandonner ou reessayez\n");
 					    		}
 					    		
 					    		
@@ -165,7 +165,7 @@ public class Bankonet_Client {
 				    		
 						} catch (DebitException e) {
 							// TODO Auto-generated catch block
-							System.out.println("Le compte selectionné ou le montant est non valide");
+							System.out.println("Le compte selectionnÃ© ou le montant est non valide");
 							e.printStackTrace();
 						}
 			    		
@@ -180,7 +180,7 @@ public class Bankonet_Client {
 //							stock1.enregistrercomptedansfichier(sessionclient.getComptesMap().get(compteadebiter));
 //			
 //							
-//							//Récupération du client et du compte après, on rafraichie le client
+//							//RÃ©cupÃ©ration du client et du compte aprÃ©s, on rafraichie le client
 //							Map<String,Client> clientsliste1= new HashMap<>();
 //							clientsliste1=Stockage.lireclientdansfichier();
 //							sessionclient=clientsliste1.get(login);

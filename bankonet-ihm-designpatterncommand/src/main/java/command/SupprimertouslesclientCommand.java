@@ -28,7 +28,7 @@ public class SupprimertouslesclientCommand extends IhmCommand{
 			serviceclient.supprimertouslesclientJPA();
 		}else
 		{
-			System.out.println("Suppression annulée.");
+			System.out.println("Suppression annulÃ©e.");
 		}
 		
 		

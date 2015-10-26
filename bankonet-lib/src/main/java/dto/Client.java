@@ -101,7 +101,7 @@ public class Client implements Serializable{
 					return myCompte;
 				}
 		}
-		throw new CompteNonTrouveException("Aucun compte trouvé pour ce numero.");
+		throw new CompteNonTrouveException("Aucun compte trouvÃ© pour ce numero.");
 	}
 	
 	

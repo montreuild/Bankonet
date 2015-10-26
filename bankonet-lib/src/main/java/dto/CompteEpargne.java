@@ -27,7 +27,7 @@ public class CompteEpargne extends Compte{
 	public void crediter(double montant) throws CreditException{
 		if(this.getSolde()+montant>1600)
 		{
-			throw new CreditException("Montant supérieur à la limite autorisé");
+			throw new CreditException("Montant supÃ©rieur Ã  la limite autorisÃ©");
 		}
 		setSolde(getSolde()+montant);
 	}

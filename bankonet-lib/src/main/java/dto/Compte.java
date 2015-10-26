@@ -40,7 +40,7 @@ public abstract class  Compte implements CompteStat, Serializable{
 		this.intitule = intitule;
 		if(solde < 0)
 		{
-			System.out.println("Attention solde négatif, corigé à 0");
+			System.out.println("Attention solde nÃ©gatif, corrigÃ© Ã  0");
 			this.solde = 0;
 		}else
 		{
@@ -56,7 +56,7 @@ public abstract class  Compte implements CompteStat, Serializable{
 	public void debiter(double montant) throws DebitException {
 		if(montant>debitmax())
 		{
-			throw new DebitException("Montant supérieur à la limite non autorisé");
+			throw new DebitException("Montant supÃ©rieur Ã  la limite non autorisÃ©");
 		}
 		setSolde(getSolde()-montant);
 	}

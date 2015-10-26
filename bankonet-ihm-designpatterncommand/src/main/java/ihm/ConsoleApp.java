@@ -90,7 +90,7 @@ public class ConsoleApp {
 			System.out.println(command.getId()+ ". " + command.getLibelleMenu());
 		}
 		Scanner sc = new Scanner(System.in);
-		//récupérer la saisie
+		//rÃ©cupÃ©rer la saisie
 		System.out.println("Veuillez choisir une action.");
 		int choix = sc.nextInt();
 		sc.nextLine();

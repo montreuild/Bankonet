@@ -40,12 +40,12 @@ public class BankonetConseiller {
 
 			
 			System.out.println("***** APPLICATION CONSEILLER BANCAIRE ******");
-			System.out.println("0. Arrêter le programme");
+			System.out.println("0. ArrÃ©ter le programme");
 			System.out.println("1. Ouvrir un compte");
 			System.out.println("2. Lister tous les clients");
 			System.out.println("3. Ajouter un compte courant");
-			System.out.println("4. Ajouter un compte épargne");
-			System.out.println("5. Autoriser un découvert");
+			System.out.println("4. Ajouter un compte Ã©pargne");
+			System.out.println("5. Autoriser un dÃ©couvert");
 			System.out.println("Veuillez choisir une action.");
 			choix=sc.nextLine();
 		
@@ -55,8 +55,8 @@ public class BankonetConseiller {
 			switch(choix){
 			
 			case "0":
-				//0. Arrêter le programme
-				System.out.println("Arrêt de l’application");
+				//0. Arrï¿½ter le programme
+				System.out.println("ArrÃªt de l'application");
 				break;
 				
 			case "1":
@@ -110,7 +110,7 @@ public class BankonetConseiller {
 				
 			case "4":
 				
-				//"4. Ajouter un compte épargne
+				//"4. Ajouter un compte ï¿½pargne
 				
 				System.out.println(serviceclient.listerlesclients());
 				
@@ -126,7 +126,7 @@ public class BankonetConseiller {
 				
 			case "5":
 			
-				//"5. Autoriser un découvert"
+				//"5. Autoriser un dï¿½couvert"
 				
 				System.out.println(serviceclient.listerlesclients());
 				
@@ -138,13 +138,13 @@ public class BankonetConseiller {
 				
 				System.out.println(servicecompte.listercomptesclient(clientseclectionner11));
 				
-	    		System.out.println ("Taper le numero(string type CC1) du compte à modifier");
+	    		System.out.println ("Taper le numero(string type CC1) du compte ï¿½ modifier");
 	    		String compteamodifier = sc.nextLine();
-	    		System.out.println ("Taper le montant du nouveau découvert autorisé");
-	    		String montantdécouvert = sc.nextLine();
+	    		System.out.println ("Taper le montant du nouveau dï¿½couvert autorisï¿½");
+	    		String montantdecouvert = sc.nextLine();
 	    		
 	    		
-	    		//Implementer pour la modification du découvert.
+	    		//Implementer pour la modification du dï¿½couvert.
 				
 				break;
 

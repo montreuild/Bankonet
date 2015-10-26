@@ -47,7 +47,7 @@ public class ClientDaoJpa implements ClientDao{
 		}
 		catch(NoResultException e)
 		{
-			System.out.println("Pas de client trouvé");
+			System.out.println("Pas de client trouvÃ©");
 			return null;
 		}
 
@@ -62,7 +62,7 @@ public class ClientDaoJpa implements ClientDao{
 		}
 		catch(NoResultException e)
 		{
-			System.out.println("Pas de client trouvé");
+			System.out.println("Pas de client trouvÃ©");
 			return null;
 		}
 		
@@ -79,7 +79,7 @@ public class ClientDaoJpa implements ClientDao{
 					em.merge(clientaupdate);
 					System.out.println(clientaupdate);
 			}else{
-				System.out.println("Client pas trouvé");
+				System.out.println("Client pas trouvÃ©");
 			}
 		et.commit();
 		em.close();
@@ -94,9 +94,9 @@ public class ClientDaoJpa implements ClientDao{
 			Client clientasup = em.find(Client.class, login);
 			if(clientasup != null){
 					em.remove(clientasup);
-					System.out.println("Client supprimé");
+					System.out.println("Client supprimÃ©");
 			}else{
-				System.out.println("Client pas trouvé");
+				System.out.println("Client pas trouvÃ©");
 			}
 		et.commit();
 		em.close();
