@@ -77,7 +77,6 @@ public class ServiceClientImp implements ServiceClient{
 
 
 		public Client retrounerclientlogin(String login){
-			Client client=new Client();
 			
 			Map<String,Client> clientsmap= new HashMap<>();
 			clientsmap= new HashMap<>();
@@ -153,8 +152,6 @@ public class ServiceClientImp implements ServiceClient{
 
 		@Override
 		public Client retrounerclientloginJPA(String login) {
-			
-			Client client=new Client();
 			
 			Map<String,Client> clientsmap= new HashMap<>();
 			clientsmap= new HashMap<>();

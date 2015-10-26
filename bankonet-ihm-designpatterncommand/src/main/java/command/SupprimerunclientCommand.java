@@ -12,7 +12,7 @@ public class SupprimerunclientCommand extends IhmCommand {
 	}
 
 	public String getLibelleMenu() {
-		// TODO Auto-generated method stub
+
 		return "JPA Supprimer un client";
 	}
 	

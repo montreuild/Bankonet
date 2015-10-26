@@ -229,19 +229,21 @@ public class Client implements Serializable{
 					
 					}
 				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
-			}sb.append(" ");
-		}sb.append(" ] ");
+			}
+			sb.append(" ");
+		}
+		sb.append(" ] ");
 		
-		
+		//return "Client [nom=" + nom + ", prenom=" + prenom + ", identifiant=" + identifiant + ", civilite=" + civilite + ", comptesMap=" + comptesMap + "]";
 		return sb.toString();
 
-		//return "Client [nom=" + nom + ", prenom=" + prenom + ", identifiant=" + identifiant + ", civilite=" + civilite + ", comptesMap=" + comptesMap + "]";
+
 	}
 
 

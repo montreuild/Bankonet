@@ -23,7 +23,7 @@ public class SupprimertouslesclientCommand extends IhmCommand{
 		System.out.println("Voulez vous vraiment supprimer tous les clients? y/n");
 		String verif=sc11.nextLine();
 		
-		if(verif.equals("y"))
+		if("y".equals(verif))
 		{
 			serviceclient.supprimertouslesclientJPA();
 		}else

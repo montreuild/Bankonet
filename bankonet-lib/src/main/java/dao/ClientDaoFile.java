@@ -30,10 +30,10 @@ public class ClientDaoFile implements ClientDao {
 	      try {
 			oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File(FICHIER_STOCKAGE_CLIENT))));
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 
@@ -41,14 +41,14 @@ public class ClientDaoFile implements ClientDao {
 	            oos.writeObject(clientsmap);
 	
 	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
+
 	            e.printStackTrace();
 	        } 
 	      
 	      try {
 			oos.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
@@ -62,6 +62,7 @@ public class ClientDaoFile implements ClientDao {
 		try {
 			fis = new FileInputStream (FICHIER_STOCKAGE_CLIENT);
 		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
 		}
 		ObjectInputStream ois=null;
 		try {
@@ -77,7 +78,7 @@ public class ClientDaoFile implements ClientDao {
 				try {
 					ois.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 			}
@@ -88,21 +89,20 @@ public class ClientDaoFile implements ClientDao {
 
 	@Override
 	public Client findByLastnameJPA(String search) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 
 	@Override
 	public Client findByFirstnameJPA(String search) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 
 	@Override
 	public void modifiernomclientJPA(String nom, String login) {
-		// TODO Auto-generated method stub
 		
 	}
 

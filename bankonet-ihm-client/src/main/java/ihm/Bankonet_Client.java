@@ -15,7 +15,7 @@ import dto.DebitException;
 public class Bankonet_Client {
 
 	
-	private FactoryDao factory;
+	//FactoryDao factory;
 	//private CompteService compteService= new CompteServiceImp();
 	//private ClientService clientservice=new ClientServiceImp(compteService,factory.getClientDao());
 	
@@ -87,7 +87,7 @@ public class Bankonet_Client {
 			    		{
 			    			Object key= iterateur1.next();
 			    			if(sessionclient.getComptesMap().get(key) instanceof CompteCourant )
-			    			{System.out.println (key+"=>"+sessionclient.getComptesMap().get(key));}
+			    				System.out.println (key+"=>"+sessionclient.getComptesMap().get(key));
 			    		}
 						
 			    		System.out.println ("Taper le numero(string type CC1) du compte a crediter");
@@ -99,7 +99,7 @@ public class Bankonet_Client {
 			    		try {
 							sessionclient.getComptesMap().get(compteacrediter).crediter(montantacrediter);
 						} catch (CreditException e) {
-							// TODO Auto-generated catch block
+
 							System.out.println("Le compte selectionné ou le montant est non valide");
 							e.printStackTrace();
 						}
@@ -136,7 +136,7 @@ public class Bankonet_Client {
 			    		{
 			    			Object key= iterateur11.next();
 			    			if(sessionclient.getComptesMap().get(key) instanceof CompteCourant )
-			    			{System.out.println (key+"=>"+sessionclient.getComptesMap().get(key));}
+			    				System.out.println (key+"=>"+sessionclient.getComptesMap().get(key));
 			    		}
 			    		
 			    		
@@ -164,12 +164,12 @@ public class Bankonet_Client {
 					    	sessionclient.getComptesMap().get(compteadebiter).debiter(montantadebiter);
 				    		
 						} catch (DebitException e) {
-							// TODO Auto-generated catch block
+
 							System.out.println("Le compte selectionné ou le montant est non valide");
 							e.printStackTrace();
 						}
 			    		
-						if(montantadebiter!=0){
+						if(montantadebiter!=0.0f){
 							
 						
 			    		   System.out.print("Votre nouveau solde est de "+ sessionclient.getComptesMap().get(compteadebiter).getSolde() +"\n\n");

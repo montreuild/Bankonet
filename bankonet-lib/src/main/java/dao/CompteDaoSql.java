@@ -23,7 +23,7 @@ public class CompteDaoSql implements CompteDao{
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(url,"root","");
 		} catch (SQLException | ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 		
@@ -41,7 +41,7 @@ public class CompteDaoSql implements CompteDao{
 			int nbCompte = statement.executeUpdate("INSERT INTO `compte`(`Loginclient`, `Numero`, `Intitule`, `Solde`, `montantDecouvertAutorise`, `taux interet`, `type`) VALUES ('"+loginclient+"','"+compte.getNumero()+"','"+ compte.getIntitule()+"','"+compte.getSolde()+"','"+((CompteEpargne) compte).getTauxInteret()+"','CompteEpargne')");			
 			}
 			} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		
@@ -49,7 +49,7 @@ public class CompteDaoSql implements CompteDao{
 		try {
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
@@ -64,7 +64,7 @@ public class CompteDaoSql implements CompteDao{
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(url,"root","");
 		} catch (SQLException | ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 
@@ -91,7 +91,7 @@ public class CompteDaoSql implements CompteDao{
 					int nbCompte = statement.executeUpdate("INSERT INTO `compte`(`Loginclient`, `Numero`, `Intitule`, `Solde`, `taux interet`, `type`,`montantDecouvertAutorise`) VALUES ('"+loginclient+"','"+compte.getNumero()+"','"+ compte.getIntitule()+"','"+compte.getSolde()+"','"+((CompteEpargne) compte).getTauxInteret()+"','CompteEpargne','0')");			
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -100,7 +100,7 @@ public class CompteDaoSql implements CompteDao{
 		try {
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
@@ -118,7 +118,7 @@ public class CompteDaoSql implements CompteDao{
 					Class.forName("com.mysql.jdbc.Driver");
 					connection = DriverManager.getConnection(url,"root","");
 				} catch (SQLException | ClassNotFoundException e1) {
-					// TODO Auto-generated catch block
+
 					e1.printStackTrace();
 				}
 
@@ -143,7 +143,7 @@ public class CompteDaoSql implements CompteDao{
 
 						
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					}
 				
@@ -152,7 +152,7 @@ public class CompteDaoSql implements CompteDao{
 				try {
 					connection.close();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 		
@@ -162,19 +162,19 @@ public class CompteDaoSql implements CompteDao{
 
 	@Override
 	public void saveCompteJPA(Client client, Compte compte) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public void saveCompteJPA(Client client) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public Map<String, Compte> lirecomptedansfichierJPA() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

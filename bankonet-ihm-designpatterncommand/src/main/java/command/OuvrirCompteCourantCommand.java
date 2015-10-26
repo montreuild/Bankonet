@@ -13,7 +13,7 @@ public class OuvrirCompteCourantCommand extends IhmCommand {
 	}
 
 	public String getLibelleMenu() {
-		// TODO Auto-generated method stub
+
 		return "Ouvrir un compte courant";
 	}
 	
